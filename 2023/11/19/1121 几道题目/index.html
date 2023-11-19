@@ -201,77 +201,10 @@
         
             
         
-        <p><font face="宋体" size=3><strong><br>1.</p>
-<pre><code>查询出每个学生参加每一门科目测试的次数，结果按student_id和subject_name排序。
-输入：
-Students table:
-+------------+--------------+
-| student_id | student_name |
-+------------+--------------+
-| 1          | Alice        |
-| 2          | Bob          |
-| 13         | John         |
-| 6          | Alex         |
-+------------+--------------+
-Subjects table:
-+--------------+
-| subject_name |
-+--------------+
-| Math         |
-| Physics      |
-| Programming  |
-+--------------+
-Examinations table:
-+------------+--------------+
-| student_id | subject_name |
-+------------+--------------+
-| 1          | Math         |
-| 1          | Physics      |
-| 1          | Programming  |
-| 2          | Programming  |
-| 1          | Physics      |
-| 1          | Math         |
-| 13         | Math         |
-| 13         | Programming  |
-| 13         | Physics      |
-| 2          | Math         |
-| 1          | Math         |
-+------------+--------------+
-输出：
-+------------+--------------+--------------+----------------+
-| student_id | student_name | subject_name | attended_exams |
-+------------+--------------+--------------+----------------+
-| 1          | Alice        | Math         | 3              |
-| 1          | Alice        | Physics      | 2              |
-| 1          | Alice        | Programming  | 1              |
-| 2          | Bob          | Math         | 1              |
-| 2          | Bob          | Physics      | 0              |
-| 2          | Bob          | Programming  | 1              |
-| 6          | Alex         | Math         | 0              |
-| 6          | Alex         | Physics      | 0              |
-| 6          | Alex         | Programming  | 0              |
-| 13         | John         | Math         | 1              |
-| 13         | John         | Physics      | 1              |
-| 13         | John         | Programming  | 1              |
-+------------+--------------+--------------+----------------+
-</code></pre>
-<pre><code class="sql">SELECT
-    s.student_id,
-    sub.subject_name,
-    COUNT(e.subject_name) AS exam_count
-FROM Students s
-CROSS JOIN Subjects sub 
-LEFT JOIN Examinations e 
-ON s.student_id = e.student_id AND sub.subject_name = e.subject_name 
-GROUP BY s.student_id, sub.subject_name
-ORDER BY s.student_id, sub.subject_name;
-</code></pre>
-<p>对于前两个表的结合，应产生笛卡尔积而不是左或右；接下来left join时需要添加两个限定条件<br>据说是经典例题……其实还是不太难的，不过确实容易写错<br><br/><br>2.</p>
-<pre><code>计算每台机器各自完成一个进程任务的平均耗时:指进程的&#39;end&#39;时间戳减去&#39;start&#39;时间戳。
+        <p><font face="宋体" size=3><strong></p>
+<pre><code class="sql">计算每台机器各自完成一个进程任务的平均耗时:指进程的&#39;end&#39;时间戳减去&#39;start&#39;时间戳。
 平均耗时通过计算每台机器上所有进程任务的总耗费时间除以机器上的总进程数量获得。
-
-输入：
-Activity table:
+输入Activity table:
 +------------+------------+---------------+-----------+
 | machine_id | process_id | activity_type | timestamp |
 +------------+------------+---------------+-----------+
@@ -279,32 +212,89 @@ Activity table:
 | 0          | 0          | end           | 1.520     |
 | 0          | 1          | start         | 3.140     |
 | 0          | 1          | end           | 4.120     |
-| 1          | 0          | start         | 0.550     |
-| 1          | 0          | end           | 1.550     |
-| 1          | 1          | start         | 0.430     |
-| 1          | 1          | end           | 1.420     |
-| 2          | 0          | start         | 4.100     |
-| 2          | 0          | end           | 4.512     |
-| 2          | 1          | start         | 2.500     |
-| 2          | 1          | end           | 5.000     |
 +------------+------------+---------------+-----------+
 输出：
 +------------+-----------------+
 | machine_id | processing_time |
 +------------+-----------------+
 | 0          | 0.894           |
-| 1          | 0.995           |
-| 2          | 1.456           |
 +------------+-----------------+
-</code></pre>
-<p>这也是看了题解学到的解法，实在巧妙，和Excel中某个转化为10的解法很类似（忘了）</p>
-<pre><code class="sql">select machine_id, 
+
+select machine_id, 
     round(sum(timestamp*(if(activity_type=&#39;end&#39;,1,-1))) / 
     count( distinct process_id), 3) as processing_time 
 from Activity
 group by machine_id
+
+--实在巧妙，和Excel中某个转化为10的解法很类似（忘了）
+--规避了自联结或子查询，使用正负号直接得出结果
+--当然，需要良好的数学思维，我一辈子也想不出这种方法
 </code></pre>
-<p>规避了自联结或子查询，使用正负号直接得出结果<br>当然，需要良好的数学思维，我就一辈子也想不出这种方法<br><br/><br>3.<br></strong></font></p>
+<pre><code class="sql">找出所有至少连续出现三次的数字。
+输入Logs表：
++----+-----+
+| id | num |
++----+-----+
+| 1  | 1   |
+| 2  | 1   |
+| 3  | 1   |
+| 4  | 2   |
+| 5  | 1   |
+| 6  | 2   |
+| 7  | 2   |
++----+-----+
+输出Result表：
++-----------------+
+| ConsecutiveNums |
++-----------------+
+| 1               |
++-----------------+
+
+-- 首先想到，按num聚合，判断是否有连续n个出现的id，大概是
+for id in list(identify):
+    #其中,list(identify)是按num聚合后的结果
+    list(id)=list(range(id,id+n+1))
+    if all(elem in list(identify) for elem in list(id)):
+        return num
+--没跑过，多半有错，但没写出来，还是来看看大佬的解法吧:
+
+--一个num出现后，真实序列为i，第k次出现；差值为i-k
+--连续出现第n次时，真实序列i+n，出现次数为k+n；差值为i+n-(k+n)=i-k
+--不连续出现，真实序列为i+n+m，而出现的次数为k+n+1;差值为i-k+m-1
+select distinct Num 
+from (
+select Num, count(1) as SerialCount 
+from  (select Id, Num,
+row_number() over(order by id) - row_number() over
+    (partition by Num order by Id) as SerialSubGroup
+from ContinueNumber) as Sub
+group by  Num, SerialSubGroup 
+having COUNT(1) &gt;= 3) as Result
+
+--或者简单lag下:
+select distinct num as ConsecutiveNums
+from (
+select 
+num, 
+num-lag(num) over(order by id asc) as d1,
+num-lag(num,2) over(order by id asc) as d2
+from logs
+) as t1
+where d1=0 and d2=0
+</code></pre>
+<pre><code class="sql">--有些东西就不该用sql写
+select 
+    person_name
+from (select 
+    turn,
+    person_name,
+    sum(weight) over(order by turn) as cumu_weight
+from Queue) as t
+where cumu_weight &lt;= 1000
+order by turn desc
+limit 1
+</code></pre>
+<p></strong></font></p>
 
     </div>
 
