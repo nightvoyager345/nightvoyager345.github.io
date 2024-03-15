@@ -1,299 +1,213 @@
+
 <!DOCTYPE html>
 <html lang="cn">
-    <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
-    <meta name="description" content="support" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
-    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
-    <title>Asuka</title>
+<head>
+    <meta charset="utf-8" />
+    <title>support | Asuka</title>
+    <meta name="author" content="Voyager" />
+    <meta name="description" content="Welcome to my museum." />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
 
-    
-        
-<link rel="stylesheet" href="/css/reset.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-        
-<link rel="stylesheet" href="/css/markdown.css">
 
-        
-<link rel="stylesheet" href="/css/fonts.css">
- 
-         <!--注意：首页既不是post也不是page-->
-        
-            
-<link rel="stylesheet" href="/css/waline.css">
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
 
-        
-    
-    
-<link rel="stylesheet" href="/css/ui.css">
- 
-    
-<link rel="stylesheet" href="/css/style.css">
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
 
 <meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ASUKA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ASUKA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>support</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/16
+        </span>
+        
+        
+    </div>
     
-    <style>
-        :root {
-            --waline-theme-color: #002fa7; 
-            --waline-color: #002fa7; 
-            --waline-border-color: #002fa7; 
-            --waline-white: #002fa7; 
-            --waline-bgcolor-light: #EFCBCB;  
-        }
-        body {
-            color: #002fa7;
-            background: #EFCBCB;
-        }
-        .post-md code {
-            background: #333333;
-            color: #cbcbcb; 
-        }
-        .year-font-color {
-            color: #002fa7 !important;
-        }
-        .wl-card span.wl-nick {
-            color: #002fa7; 
-        }
-        .wl-card .wl-badge {
-            border: 1px solid #002fa7;
-            color: #002fa7; 
-        }
-        .wl-btn {
-            border: 1px solid #002fa7; 
-            color:  #002fa7;  
-        }
-        .wl-btn.primary {
-            color: #EFCBCB; 
-        }
-        .wl-header label {
-            color: #002fa7;
-        }
-        a {
-            color: #002fa7;
-        }
+    <div class="content" v-pre>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
 
-        .post-md a {
-            color: #002fa7;
-        }
-
-        .nav li a {
-            color: #002fa7;
-        }
-
-        .archive-main a:link {
-            color: #002fa7;
-        }
-        .archive-main a:visited {
-            color: #002fa7; 
-        }
-
-        .archive li span {
-            color: #002fa7;
-        }
-
-        .post-main-title {
-            color: #002fa7;
-        }
-
-        .post-md h1,
-        .post-md h2,
-        .post-md h3,
-        .post-md h4,
-        .post-md h5,
-        .post-md h6 {
-            color: #002fa7;
-        }
-
-        [data-waline] p {
-            color: #002fa7;
-        }
-        [data-waline] a {
-            color: #002fa7;
-        } 
-        .wl-sort li.active {
-            color: #002fa7;
-        }
-
-        .wl-card .wl-meta>span {
-            background: #EFCBCB;
-        }
-
-        .paper {
-            background: #EFCBCB;
-        }
-
-        .index-main {
-            background: #EFCBCB;
-        }
-
-        .paper-main {
-            background: #EFCBCB;
-        }
-
-        .wl-panel {
-            background: #EFCBCB;
-        }
-
-        .archive li:nth-child(odd) {
-            background: #EFCBCB;
-            ;
-        }
-
-        .archive li:nth-child(even) {
-            background: #EFCBCB;
-        }
-
-        .post-md>table tr:nth-child(odd) td {
-            background: #EFCBCB;
-        }
-
-        .post-md>table tr:nth-child(even) td {
-            background: #EFCBCB;
-        }
-    </style>
-
-    <body>
-        <div class="paper">
-            
-            
-            
-            
-                <div class="shadow-drop-2-bottom paper-main">
-                    
-<div class="header">
-    <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
-        <div class="header-content">
-            <a class="logo" href="/">Asuka</a> 
-            <span class="description"></span> 
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 Asuka
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Voyager
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
         </div>
         
     </div>
-    
-   
-    <ul class="nav">
-        
-            
-                <li><a href="/">首页</a></li>
-            
-        
-            
-                <li><a href="/list/">文章</a></li>
-            
-        
-    </ul>
-</div> 
-        
-                    
-                    
-                    
-                    <!--说明是文章post页面-->
-                    
-                        <div class="post-main">
+</footer>
 
-    
-
-    <div class="post-md">
+        </div>
         
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
         
     </div>
-
-    <div class="post-meta">
-        <i>
-        
-        </i>
-    </div>
+    <script src="/js/main.js"></script>
     
-        
-    <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-    </div>
     
-        
 
-    <div id="waline"></div>
-    <script type="module"  >
-        import { init } from 'https://npm.elemecdn.com/hexo-theme-a4@latest/source/js/waline.mjs'; 
-        function loadWaline() {
-            init({
-                el: '#waline',
-                serverURL: 'https://asuka-mu.vercel.app/',
-                lang: 'en',
-                dark: 'body[class~="dark-mode"]',
-                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
-                search: false, // 禁止表情包搜索
-                reaction: false, // 对文章打分
-                pageview: false, // 浏览量统计
-                comment: false, // 评论数统计
-
-                locale: {
-                    placeholder: 'Comment is anonymous...', 
-                    sofa: ''
-                },
-            });
-            
-        }
-        window.addEventListener('DOMContentLoaded', loadWaline);
-    </script>
 
 
 
     
-    
-    
-    </div>
-
-
-     
-</div>
-
-
-
-                    
-                    
-                    <div class="footer">
-    
-        <span> 
-             
-
-            
-                
-
-            
-        </span>
-    
-</div>
-<!--这是指一条线往下的内容-->
-<div class="footer-last">
-    
-            <span>不是命运，这是我最深爱的。</span>
-            
-                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
-            
-    
-</div>
-
-
-    
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
-
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
-
-
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
-                </div>
-            
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>“缺失”的电影 | Asuka</title>
+    <meta name="author" content="Voyager" />
+    <meta name="description" content="Welcome to my museum." />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ASUKA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ASUKA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>“缺失”的电影</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/20
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><font face="宋体" size=3><strong></p>
+<p>除了仍未上映的《邪恶不存在》，看完了滨口龙介的几乎全部作品，每部都非常喜欢。这是奇怪又不奇怪的，奇怪是因为从未喜欢过一个导演的全部作品，需要说明的是，此处的喜欢不仅是欣赏，譬如我连续观看《卡比利亚之夜》《大路》和《八部半》后，曾以为费里尼是命中注定的导演，然而紧接着看了《甜蜜的生活》，发觉并不是这样，只是恰好连看了三部对胃口的电影、这三部又恰好来自同一位导演。再比如，库布里克拍摄过诸多不同题材的电影，每部对我都是神一样的存在，但我没有那么喜欢，类比到人就很好理解：你从不否认英格丽·褒曼是极美的，但你并不爱她，我对库布里克的态度就是如此。不奇怪在于，他的作品的风格是如此类似，以至于如果你喜欢其中一部，那么大概率也会喜欢其他的。另外，我喜欢定镜远胜过喜欢运镜，这是看了许多黑白片后得出的结论。<br><br/><br>对日本电影有所关注的人都不会忽视这颗冉冉升起的新星。《欢乐时光》和《夜以继日》后，2021年《驾驶我的车》更是横扫国际影坛各大奖，我毫不怀疑接下来会是他的黄金时代。提到日本电影，按客观的顺序排序，应该是黑泽明、小津安二郎，接着是沟口健二、成濑巳喜男，再往后是大岛渚、北野武、是枝裕和（此处仅讨论真人电影）。滨口龙介选择出的十佳电影为：</p>
+<p>1.让·雷诺阿套装(着重提到《黄金马车》)<br>2.让·格莱米永套装(着重提到《夏日时光》)<br>3.雅克·贝克《金盔》<br>4.罗伯托·罗西里尼《火山边缘之恋》<br>5.道格拉斯·塞克《深锁春光一院愁》<br>6.沟口健二《夜之女》<br>7.成濑巳喜男30年代的默片<br>8.约瑟夫·冯·斯登堡默片套装(《地下世界》《最后命令》《纽约船坞》)<br>9.乔治·库克《休假日》<br>10.侯孝贤《海上花》</p>
+<p>遗憾的是我全都没看过。。。他原本想选杨德昌的《牯岭街少年杀人事件》，但觉得大家对侯孝贤关注不够，才选了《海上花》，如果他遵循内心，本来我们可以有1&#x2F;10共同语言。他从这些人受到了怎样的影响，又如何反映在他的作品里，这值得探索。另外，据说他的风格受到侯麦的影响，我实在看不下去侯麦，对此只好闭嘴。</p>
+<p>几乎所有观众都能发现：滨口龙介的作品无疑文本（几乎等同于对话）大于手法。<br>手法大于文本，韦斯·安德森就是典型，这位我相信大家都认同；诺兰，尽管兰子哥的剧本常被诟病但个人是喜欢的，但他对实拍的追求实在到了执念的地步。我又要叠甲：我没说这样不好。<br>文本大于手法的导演很多，上述提到的小津安二郎、是枝裕和、杨德昌、侯孝贤，个人认为都属于此范畴（绝无意表明他们就此忽视了其他方面，但不能因为《牯岭街》是一部事无巨细的大作，就说它在文本上的用心不是最多）。滨口龙介更甚，有时候你几乎认为他完全抛去了构图，当然在后文中我会提到，我认为这种“抛去构图”的形式就是他的构图。回到话题上来，一种无印良品式极简，去掉所有包装，你一眼就知道这是柜子那是收纳盒，对滨口龙介而言，此处的柜子或收纳盒即为对话。</p>
+<p>以至于，观众甚至会觉得，这是否还能算作电影？如果文本是最重要的，为什么不能写成小说呢？如果需要声音来传达，为什么不是有声书呢？如果在此基础上还需要图像，为什么不是（）（不知道这叫什么？Galgame？开玩笑的，总之是类似形式）呢？曾看到一条影评说“文字可以达到的何必拍电影”，对此我非常不赞同——在他的电影中，演员演技称不上好，许多地方颇有些“棒读”的意思，但我真心觉得棒读反而增加了魅力，仅凭文字绝对无法达到相同效果！事实是电影里的棒读的确是刻意的，有种有意而为之的机械（唯独唐田英里佳不属于此范畴，她可能纯演技差），带来如同镜头套了欧根纱的迷人，而不是因为演员不是专业人士、只是恰好达到了这种效果。</p>
+<br/>
+为什么文字达不到相同效果？因为声音是很重要的。叙述者背负了众人的思想，它是一种复现。如果只是文字，很少有人会觉得某个角色讲的话还属于其他角色，但声音可以超越个体，如果一个人在讲故事，你很容易透过ta的叙述看到背后的人。语调没有多少起伏，恰恰给人很强的故事感，因为如果有太多起伏，那就不是许多人的故事，而是某个特定的人的故事了。对于他的片，很容易看出剧情不含超能力，却不可能存在于无论过去还是未来的真正的某天，因为它不属于谁。
+
+<p>再次强调这样的事实：在他的电影里，文本是最重要的。我仔细回想了下惊叹于浑然天成的演技的时刻。比如达拉斯买家俱乐部，说实话现在我记不起任何一句台词，只记得男主在车上崩溃得相当真实，但那段一句话都没讲。就算是爱在三部曲，台词密度非常高，但结束后大家都在赞美爱情，会觉得这是女主和男主的故事，重音在形容词上，与之相对地，看完偶然与想象，第一反应却绝对是文本。</p>
+<p>身体和言语互相影响，如果我们在说谎，二者之间会出现不一致，镜头会进一步放大这种不一致。观众通过镜头进行凝视，这是异于日常的，演员要面对的是未来的他者的无穷目光；但演员亦能通过镜头感受到来自未来的他者的无穷认可（这句话讲得真好）。演员在表演时要成为别人，这个别人不能是自己，但是角色的载体又只能是演员本人，那么去表演化就使得文本和演员共存但独立，继而达到“我在仍是我的状态下成为别人”。此处的去表演化是指把文本完全融入自己，达到发自肺腑的效果。这个文本，是角色会说的话，也是演员会说的话。我倾听了你的故事，作为你的复现者叙述你的故事，但没有加上我的情感。不过在正式表演时，演员会自然地加上语感和语调，这种语调能够影响其他演员，从而使整部片都是自然的。</p>
+<p>为什么不会出现尴尬？因为写剧本时会刻意考虑到演员作为自己能不能讲出某句话，如果是演员无论如何都说不出口的，那么表演起来一定存在不一致，必然要进行修改。但也不会绝对服从演员，因为角色有自己的生命力，他们甚至不完全跟着编剧的思想走。其实就是极限的意思了。无限接近但达不到。</p>
+<p>ps.想到“出刀的理由决定了武艺的格局与极限，我所背负的是投向天光的万千视线”</p>
+<p>此外，日文台词有大量敬语，演员讲的话非常书面，更增添了“非日常”感。关于这点，最开始好像是和Sana讲的，我说最喜欢的电影题材就是“日常中的非日常”。（11&#x2F;23：这个总结最开始来源于马丁麦克唐纳，也是一位每部作品我都很喜欢的导演。但比不过滨口龙介。可能这就是东亚人的命吧！）能看出字幕组在努力往上靠，譬如“我私以为…”，但字幕向来不那么口语，加上中文里敬语体系不如日语那么完整，还是不太容易看出来。我没学过语言学，故查资料：“日语是黏着语，需要助词来连接句子，敬语也是从此出现；而汉语是孤立语，句子中的成分可以单独存在，因此不需要繁琐的敬语语法，只存在敬称”。敬语体系好不好，这个问题先不讨论，但在作品里确实能起到一些作用。</p>
+<br/>
+tbc
+
+
+
+<p>“叙事空间”，家里是私人空间；公共场所，虽然是公共场所，但似乎刻意寻找了（某种特性……一时间没想出来）；连接两者的交通工具也是隐秘的移动场所，人物上下车、行驶的方向、窗外的景色都有各自的隐喻。</p>
+<p>虚无飘渺的……离不开对日本大环境的探索：失去的三十年、90年代的亚洲、311大地震。幸存者的丧失，身体和知觉之间形成了时差。选了《繁荣与停滞》作为宏经第二篇读书报告书目，考虑到我做事三分钟热度，不得不用外部压力push自己。</p>
+<p>对话能让人发现自己未知的部分——一面镜子，现实中的、或者角色扮演的。<br>自我的对话。当下的自己，或者和戏中戏里的角色对应的部分。《夜以继日》的英文名是Asako I &amp; II。对想象中的他者，此处又提到偶然与想象第三章；或者单纯的脑补。<br>数次出现的文本朗读（欢乐时光-朗读会、驾驶我的车-剧本朗读、偶然与想象-小说朗读）。</p>
+<p>出轨、性、暴力（这个词用日语念起来很有节奏感），在爱情里分别扮演怎样的角色？</p>
+<p></strong></font></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 Asuka
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Voyager
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

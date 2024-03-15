@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>二月杂记 | Asuka</title>
+    <meta name="author" content="Voyager" />
+    <meta name="description" content="Welcome to my museum." />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ASUKA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ASUKA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>二月杂记</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/2/28
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><font face="宋体" size=3><strong></p>
+<font face="宋体" size=4>
+0201 
+</font>
+
+<p>躺了三天，实在空虚得慌。回到上海所有力气都消失了，反正永远不出太阳，昨天今天明天没有任何差别。</p>
+<p>开始学做饭，不是粘锅就是调料放少了，通常是两个一起来。我发现我对做饭没有兴趣，纯粹是一种手段。</p>
+<p>我还发现，我对上学最大的恐慌是晚上睡哪里。如果不让换宿舍，我就去踹三楼空寝室的门。</p>
+<br/>
+
+<font face="宋体" size=4>
+0202
+</font>
+
+<p>如果事物在发展过程中出现了变化，那就没有必要纠结它诞生最初出于何种目的，至少是不冲突的或者不是最主要的，这是我的看法。（0219：暂时反对）（0306：完全反对）</p>
+<p>p.s. 今天在耳机盒里发现了线，插线后音质大飞跃，好听到觉得幸福！喜欢不用充电的东西。（“比我先存在在这世界上的人和事物”）</p>
+<p>pps. 为什么有这么多authority不给钱不给自由却要求出结果呢？他们真不知道自己异想天开？</p>
+<br/>
+
+
+
+<font face="宋体" size=4>
+0206
+</font>
+
+<p>今日有这样一种感觉，我非常需要通过找到最好的答案来确定我之所在。人活着是为了什么？在《堤》的影评里看到一个绝妙回答：人活着是为了有一天能回到过去。这个答案还不够，但是如果被问同样问题，我都会这样答，因为它是我见过听过想到过的所有回答里最好的。好像没有最喜欢的书就是没读过书，找不到对人生的回答就是没活过，仿佛对千人千答的问题作出唯一解，我的生活就会更明朗更清晰……果真如此吗？</p>
+<br/>
+
+<font face="宋体" size=4>
+0207
+</font>
+
+<p>我对公共秩序的要求可能真的到了病态的程度，反复去日本香港也有部分这个原因。香港海关很神奇的，在关里大家还都排着队，一出关好像所有规则啊守序啊全部消失了，只剩下争着往前挤，虽然我也知道内地人多不挤就没有，但正因为人多才更需要排队啊。还有电梯地铁，为什么不等里面的人先下来再上去？更不能接受“我朋友&#x2F;家人在前面所以我要到前面去”，那应该是他们到后面来，而不是你到前面去。总有人说这是“压抑后的结果”，我不知道怎么就压抑了，自由也是有底线的啊。</p>
+<p>可能我就是这样的，这倒不是说有人曾经教我这样做，从最开始我就觉得有些规则是必要的而有些是荒唐的，排队很明显属于前者中不言自明的部分。非要说的话，被来自年长者的“不懂变通”骂过，还有12岁第一次去日本对厕所的惊叹（也是第一次出现旅行戒断反应），把我的守序从满抬到了溢，不过也就是从半夜两点闯个红灯变成半夜两点都不闯红灯罢了。</p>
+<br/>
+
+<font face="宋体" size=4>
+0210
+</font>
+
+<p>看完了《卡拉马佐夫兄弟（上）》。至多半卷就疲惫不堪，如此反复，干脆也就随缘了。对于此书，我能预感到即使全部看完也评论不出什么话。</p>
+<p>拍照&#x2F;日记：有时候我承认自己走不出来，还没结束就知道走不出来。</p>
+<p>这个博客应该是屏蔽了几乎所有高中同学的，其实是还不错的学校&#x2F;班级，但实在喜欢不起来，总觉得所谓的轻松背后隐含了另一种&#x2F;更大的不幸。有的到现在才显现，然后更无声但汹涌地吞噬一些人。（）最近常在空间讲看病开药，还有看的书和感想，我看完还要删掉访问记录假装没看过，不说点什么似乎有点不近人情，可是真不知道要说什么。以前玩微博有个互关吞安眠药被救下来了，我都不知道这对ta算不算好事，斟酌了半天只会点个赞表明祝好。也不知道现在怎么样了。每次过年都会想到这些走散的…，丢掉联系方式的就不说了，还有联系方式的也不敢发消息，寻思别人没给我发是不是说明只有我还在意？那会不会有点矫情？手都抠烂了也按不下发送键，一年又一年地作罢。新年对我来说部分就是这样的。</p>
+<br/>
+
+<font face="宋体" size=4>
+0212
+</font>
+
+<p>一生都没有为这个世界改变过自己应该是最幸福的才对啊。</p>
+<br/>
+
+
+<font face="宋体" size=4>
+0215
+</font>
+
+<p>上山前去餐厅吃饭，服务员画着烟熏妆问配菜要沙拉还是土豆泥还是…没听懂，哥们在一声声you’re welcome again中迷失自我加了杯莫吉托，明明度数很低但喝完走不成直线怎么回事？上到四千米高反搞得心跳爆表连车都没下，下山又耳鸣半个多小时，我以为我都不耳鸣了，原来只是机长开得好！连夜把川西踢出计划，身体素质不随年龄增长而增长我要认命……。</p>
+<br/>
+
+
+<font face="宋体" size=4>
+0217
+</font>
+
+<p>坐了一天车，坐得头皮发麻，去了一个公园，里面有个日本庭院，还有很多日本人的墓，名是常见英文名，姓还是日本姓，也没有碑，只有一个方形井盖一样的东西，上面放了束花，小猫也会躺在井盖上晒太阳。然后想到了以下一点东西。</p>
+<p>政治：一直觉得这是一门很玄幻的学科……其实只要搞懂事物运行的底层逻辑，剩下都是顺其自然的。</p>
+<p>自私：终于想到了最好的表述：在利益已经得到满足的情况下，我不会考虑如何让他人过得更好。没有被满足时反而会考虑，大约出于“一根绳子上的蚂蚱”心理。</p>
+<p>国外：只喜欢中国没有“人”存在的部分，比如诗歌、饮食，有人参与的部分我实在忍受不了，前述公共秩序比如排队或厕所，以及部分文化比如集体主义，我觉得不是适应的问题，它就是不合理。在世界上任何一个地方，人权的标准都是一样的，只是有些地方达到了而有些没达到，就看个人更重视哪个吧。</p>
+<br/>
+
+
+
+<font face="宋体" size=4>
+0219
+</font>
+
+<p>09:33 无忧无虑美国白男：年三十有余，坐进电影道具车拍照</p>
+<p>14:09 参观当地寺庙（茅草屋），白男（已经晒得通红）在导游念叨咒语时drink energy drink，随后连打十个喷嚏，每打一个都引得同行人发出只有白人才能发出的笑声</p>
+<p>14:26 越野车上白女让她妈妈帮忙拍照，其母颤颤巍巍地按了两下屏幕……车开了，没拍到</p>
+<p>15:00 白女让她妈妈帮忙拍告示牌，其母瞎几把按了一张递给白女，白女点开相册发现一半被栏杆遮住</p>
+<p>————————————————</p>
+<p>人类进化之思：让我们假设一种情况，双方若存在权力不平等关系，则一天不能说超过二十句话，其他交流形式不受限制，这样会发生什么变化？以上对情侣不适用但对夫妻适用。</p>
+<br/>
+
+
+
+<font face="宋体" size=4>
+0226
+</font>
+
+<p>在檀香山到首尔的路上一直在想飞机掉进太平洋里怎么办（掉了就捡起来），想了半天觉得遗书应该会这么写：“这个社会的本质是不适合我的，能以这样的方式结束其实还不错，只是有些遗憾没能活出生命的广度，就请生者替我完成吧。” </p>
+<p>最近想给博客换个主题，可能等周末有空的时候尝试一下。</p>
+<br/>
+
+<font face="宋体" size=4>
+0227
+</font>
+
+<p>以为歌曲中某个转音是歌手特殊处理的，结果并不是每次现场都那样唱，真是意外地让人难过。好像在许多方面都有这样的时刻，以为某个角度某个比喻是别人的小巧思，而它们被我捕捉到了，我们心有灵犀诶！……想多了哦。</p>
+<br/>
+
+<font face="宋体" size=4>
+0228
+</font>
+
+<p>认为学校是象牙塔的多是传统学科的学生吧，选了哲学系的课之后也常常感叹这才是课堂，没有发言没有念经，只有传道授业解惑（0308：也不全是），他们感到难以进入社会是正常的，不过和商科精英处于同一间教室时，连教室都成了小型社会，我也很诧异前两年怎么忍下来还不觉得有问题。一个人处在广阔天地之中的时候觉得人生有万种可能，一到学校就摆脱不了统一的参照系，其实天地应该在心里。道理都明白不过做起来真难啊。总有好学生讨论上学期未得的A和这学期待定的A的声音飘进耳朵，非常影响好心情。——此处特别赞美SonyXM5，隔音效果非常好，能让你在不想听他人对话时变成聋子，真是贵有贵的道理！讲法语和空调声无差，讲英语有些困扰，讲中文自动钻进大脑，说明语言亦是诅咒。</p>
+<br/>
+
+<p></strong></font></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 Asuka
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Voyager
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
