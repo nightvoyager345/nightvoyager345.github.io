@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>一些能看出我是怎样的人的问题 | Asuka</title>
+    <title>About Voyager | Voyager</title>
     <meta name="author" content="Voyager" />
     <meta name="description" content="Welcome to my museum." />
     <meta name="keywords" content="" />
@@ -37,6 +37,10 @@
 
 
 
+<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" />
+
 
 
 
@@ -56,7 +60,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>ASUKA</span>
+            <span>VOYAGER</span>
         </a>
         
         <a href="/">
@@ -88,7 +92,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;ASUKA</span>
+            <span>&emsp;VOYAGER</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -149,7 +153,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>一些能看出我是怎样的人的问题</h1>
+        <h1>About Voyager</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -163,113 +167,32 @@
     </div>
     
     <div class="content" v-pre>
-        <p>1.你喜欢被怎么称呼？</p>
-<p>2.方便透露年龄吗? </p>
-<p>2.身边的人认为你是阳光的人，还是阴暗的人呢？ </p>
-<p>3.你自己认为自己是阳光的人，还是阴暗的人呢？</p>
-<p>4.昨天一整天主要做了什么事情？是怎样的一天？</p>
-<p>5.至今为止带给你影响最大的文艺作品是？ </p>
-<p>6.山间的木屋，海边有落地窗的房子，闹市区的高层公寓，最想住在哪里？</p>
-<p>7.用一句话形容近几年的自己</p>
-<p>8.喜欢现在的自己吗？</p>
-<p>9.现在最主要的兴趣是什么？</p>
-<p>10.是很大众的兴趣吗？还是小众？ </p>
-<p>11.有因为这样的兴趣被人赞赏或贬低吗？</p>
-<p>12.开始这样兴趣的契机是什么？ </p>
-<p>13.为金钱，健康，家人，恋人，智慧，工作这几项排名的话？</p>
-<p>14.最喜欢的异性虚拟角色是？</p>
-<p>15.最喜欢的同性虚拟角色是？</p>
-<p>16.你怕死吗？</p>
-<p>17.如果今天就是世界末日，会选择做什么？ </p>
-<p>18.觉得自己如果死了的话，会去天堂还是地狱？ </p>
-<p>19.有宗教信仰吗？</p>
-<p>20.神真的存在吗？</p>
-<p>21.外星人真的存在吗？</p>
-<p>22.你为什么做这个问卷呢？仅仅因为比较无聊吗？ </p>
-<p>23.做着喜欢的工作忙碌充满起伏但是充实的人生，还是拥有大笔资产没有惊喜但是悠闲的人生？</p>
-<p>24.随便想一首歌，现在浮现在你脑海中的一句歌词是？</p>
-<p>25.如果现在外星人出现在面前？A.被外星人研究，协助外星人完成一种适用于地球人的抗癌特效药 B.坐上宇宙飞船遨游太空 C.学得外星人的语言,了解外星的科技与文化、社会制度</p>
-<p>26.至今为止做过最努力的事情什么？ </p>
-<p>27.成功了吗？</p>
-<p>28.最想带到无人岛的一件东西是？ </p>
-<p>29.有什么一般人不会随身携带，但自己会随身携带的东西吗？ </p>
-<p>30.如果可以进行短暂的时光旅行，最想去哪个时代看看？ </p>
-<p>31.小时候最喜欢的职业是？ </p>
-<p>32.现在最喜欢的职业是？ </p>
-<p>33.如果可以时空穿越让人生重来，愿意穿越到几岁的时候呢？</p>
-<p>34.最近几年看到的印象深刻的社会新闻是？  </p>
-<p>35.如果可以当一天别人，最想当谁呢？ </p>
-<p>36.如果可以选择和一个名人对话，最想与谁对话？ </p>
-<p>37.爱是一种献身，还是一种利己主义呢？ </p>
-<p>38.愿意住在一个乌托邦的世界里吗？ </p>
-<p>39.最喜欢自己身上哪个地方？</p>
-<p>40.最讨厌自己身上哪个地方？</p>
-<p>41.觉得自己至今的人生中，哪个缺点最拖自己的后腿呢？</p>
-<p>42.相反的，最感谢自己的哪个优点，认为没有它就没有现在的自己呢？</p>
-<p>43.有没有被人说过像哪个名人？</p>
-<p>44.最近一次哭是什么时候？</p>
-<p>45.因为什么而哭？</p>
-<p>46.对理想的恋爱对象有什么要求吗？</p>
-<p>47.现在有几个朋友？ </p>
-<p>48.这其中真正能被称为好朋友的有几个？ </p>
-<p>49.如果结婚，会成为怎样的人？A.把不喜欢吃的东西都喂给配偶吃 B.吃掉配偶不喜欢吃的所有东西 </p>
-<p>50.如果你是幼儿园的老师，旅行的巴士遇到劫车匪徒，想成为哪种老师？ A.和匪徒正面对抗最后获得正义的胜利 B.成功地安抚孩子的情绪避免了激怒匪徒  </p>
-<p>51.做完前50问的感想是？ </p>
-<p>52.在一个安静美好的深夜打开收音机时，最希望电台在放哪首歌？</p>
-<p>53.你认为这张照片里的人是怎样的人？如何解释她们的行为？ </p>
-<p>54.喜欢怎样的人？A.和自己不同，但是处处迎合包容自己的人 B.遇到分歧会坚持己见，但是和自己有很多相似之处的人 </p>
-<p>55.人们通常如何形容你？ </p>
-<p>56.在人生的哪一个瞬间，觉得“太喜欢自己了！”</p>
-<p>57.在人生的哪一个瞬间，觉得“太讨厌自己了！”</p>
-<p>58.如果地球是空心的话，希望里面有什么？ </p>
-<p>59.人生中哪怕是一次，有没有考虑过自杀？ </p>
-<p>60.人生中哪怕是一次，有没有考虑过杀人？</p>
-<p>61.如果现在可以获得一次失忆的机会，记得所有知识技能，但是不记得自己过去的情感回忆和与他人的相处点滴，你愿意失忆吗？  </p>
-<p>62.回顾自己非常喜欢的人，他们往往都有哪些特点？   </p>
-<p>63.和喜欢的人在深夜去人很少的小剧场看电影，看到的会是以下哪种电影？ A.两个人小时候都喜欢过的、令人怀念的经典译制片 B.感人至深的爱情片 C.气氛到位，哀怨惊悚的恐怖片 D.画面优美，台词深奥的文艺片  </p>
-<p>64.最讨厌哪些词汇？ </p>
-<p>65.最喜欢哪些词汇？ </p>
-<p>66.至今为止觉得和自己性格最像的名人或虚拟角色是？ </p>
-<p>67.小时候读到过的最喜欢的一本书是？ </p>
-<p>68.现在这一刻除了这个页面，还打开了哪些网页？ </p>
-<p>69.会为过生日而觉得开心吗？ </p>
-<p>70.如果要为现在的生活找一个目标的话，那会是什么？ </p>
-<p>71.人生中最早的记忆是？</p>
-<p>72.如果有充足的时间和金钱，最想去哪里旅游？</p>
-<p>73.觉得自己是人群中较为优秀的人？还是较为糟糕的人？ </p>
-<p>74.觉得自己是是较为懒散的人？还是较为努力的人？</p>
-<p>75.如果可以和父母说一句心里话而不用担心后果，最想对父母说什么话？</p>
-<p>76.上网对自己带来的最大的好处是什么？</p>
-<p>77.最大的坏处又是什么？ </p>
-<p>78.用一种颜色形容自己的话，会是什么颜色？</p>
-<p>79.觉得自己上辈子是什么？ </p>
-<p>80.下辈子想当什么？</p>
-<p>81.至今人生中遇到的最大的危机是？</p>
-<p>82.用一句话形容小时候的自己？</p>
-<p>83.最常在检索网站上检索的关键字是什么？</p>
-<p>84.离开网络一星期，会选择怎么度过？</p>
-<p>85.有什么无伤大雅的怪癖吗？</p>
-<p>86.如果有自己的孩子的话，这个孩子会是什么名字？ </p>
-<p>87.最想拥有哪种超能力？ </p>
-<p>88.最讨厌哪种人？</p>
-<p>89.自己的网络人格和现实中的人格有多大区别？</p>
-<p>90.如果有机会单独见到自己喜欢的人，第一句话会说什么？ </p>
-<p>91.如果可以穿越到喜欢的作品里，希望是哪一部？ </p>
-<p>92.最喜欢的一句歌词或台词是？</p>
-<p>93.闹鬼的房间和深山老林里满是虫子的废墟，会选择在哪里过一夜？</p>
-<p>94.孤独的人是可耻的吗？ </p>
-<p>95.人为了什么而活着？</p>
-<p>96.觉得自己和喜欢的人将来会变成怎样的关系？</p>
-<p>97.觉得自己会成为怎样的人？ </p>
-<p>98.觉得这个社会将来会变得怎样？</p>
-<p>99.现在能许一个愿望的话？</p>
-<p>100.做到第100问的感想是？</p>
+        <font face="宋体" size=3>
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+
+<p><meting-js
+    name="东京人寿"
+    artist="容祖儿"
+    url="https://c6.y.qq.com/base/fcgi-bin/u?__=8hKQZeW"
+    cover="https://y.qq.com/music/photo_new/T002R300x300M00000366BC70ctDzN_1.jpg?max_age=2592000"><br></meting-js></p>
+<p>WeChat: idlength6-20<br>E-mail: <a href="mailto:&#49;&#x34;&#56;&#x31;&#50;&#x32;&#50;&#55;&#x35;&#x35;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#49;&#x34;&#56;&#x31;&#50;&#x32;&#50;&#55;&#x35;&#x35;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;</a><br>Weibo: <a target="_blank" rel="noopener" href="https://m.weibo.cn/u/7883658359">https://m.weibo.cn/u/7883658359</a></p>
+</font>
+
 
     </div>
     
     
     
     
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
     
     
     
@@ -279,7 +202,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2023 - 2024 Asuka
+            2023 - 2024 Voyager
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -307,8 +230,25 @@
     
 
 
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://asuka-mu.vercel.app/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "en",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "disable",
+        
+    });
+</script>
+
 
 
     
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 </html>

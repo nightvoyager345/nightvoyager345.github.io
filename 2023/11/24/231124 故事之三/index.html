@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>故事之三 | Asuka</title>
+    <title>故事之三 | Voyager</title>
     <meta name="author" content="Voyager" />
     <meta name="description" content="Welcome to my museum." />
     <meta name="keywords" content="" />
@@ -37,6 +37,10 @@
 
 
 
+<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" />
+
 
 
 
@@ -56,7 +60,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>ASUKA</span>
+            <span>VOYAGER</span>
         </a>
         
         <a href="/">
@@ -88,7 +92,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;ASUKA</span>
+            <span>&emsp;VOYAGER</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -177,6 +181,10 @@
     
     
     
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
     
     
 </div>
@@ -185,7 +193,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2023 - 2024 Asuka
+            2023 - 2024 Voyager
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -213,8 +221,25 @@
     
 
 
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://asuka-mu.vercel.app/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "en",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "disable",
+        
+    });
+</script>
+
 
 
     
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 </html>
